@@ -1,6 +1,6 @@
-module Rubycas
+module RubyCAS
   module Server
-    module Memory
+    module Core
       VERSION = "0.0.1"
     end
   end
