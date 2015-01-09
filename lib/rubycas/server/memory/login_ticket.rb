@@ -1,11 +1,10 @@
 module RubyCAS
   module Server
-    module Core
+    module Memory
       module Tickets
         class LoginTicket < Storage
           attr_accessor :id, :ticket, :consumed, :client_hostname,
                       :created_at, :updated_at
-
 
           def initialize(lt = {})
             @id = SecureRandom.uuid
@@ -29,7 +28,7 @@ module RubyCAS
           end
 
           def consume!
-            consumed = true
+            self.consumed = true
             self.save
           end
 

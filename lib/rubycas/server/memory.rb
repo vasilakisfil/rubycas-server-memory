@@ -1,15 +1,8 @@
 require 'securerandom'
-require "rubycas/server/memory/storage"
-require "rubycas/server/memory/login_ticket"
-require "rubycas/server/memory/ticket_granting_ticket"
-require "rubycas/server/memory/service_ticket"
-require "rubycas/server/memory/proxy_ticket"
-require "rubycas/server/memory/proxy_granting_ticket"
-require "rubycas/server/memory/version"
 
 module RubyCAS
   module Server
-    module Core
+    module Memory
       module Database
         extend self
         def setup(config_file)
@@ -20,3 +13,11 @@ module RubyCAS
     end
   end
 end
+
+require "rubycas/server/memory/storage"
+require "rubycas/server/memory/login_ticket"
+require "rubycas/server/memory/ticket_granting_ticket"
+require "rubycas/server/memory/service_ticket"
+require "rubycas/server/memory/proxy_ticket"
+require "rubycas/server/memory/proxy_granting_ticket"
+require "rubycas/server/memory/version"

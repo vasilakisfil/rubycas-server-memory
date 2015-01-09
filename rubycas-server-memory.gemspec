@@ -2,11 +2,10 @@
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'rubycas/server/memory/version'
-require 'rubycas/server/memory'
 
 Gem::Specification.new do |spec|
   spec.name          = "rubycas-server-memory"
-  spec.version       = RubyCAS::Server::Core::VERSION
+  spec.version       = RubyCAS::Server::Memory::VERSION
   spec.authors       = ["Filippos Vasilakis"]
   spec.email         = ["vasilakisfil@gmail.com"]
   spec.description   = %q{Memory adapter for RubyCAS Server}
