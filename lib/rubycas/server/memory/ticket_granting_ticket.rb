@@ -1,6 +1,6 @@
 module RubyCAS
   module Server
-    module Memory
+    module Core
       module Tickets
         class TicketGrantingTicket < Storage
           attr_accessor :id, :ticket, :client_hostname, :username,

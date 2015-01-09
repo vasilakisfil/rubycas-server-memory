@@ -1,6 +1,6 @@
 module RubyCAS
   module Server
-    module Memory
+    module Core
       module Tickets
         class ProxyTicket < Storage
 

@@ -2,7 +2,7 @@ require 'securerandom'
 
 module RubyCAS
   module Server
-    module Memory
+    module Core
       module Database
         extend self
         def setup(config_file)
