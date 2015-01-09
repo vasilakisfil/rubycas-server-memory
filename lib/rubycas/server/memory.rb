@@ -1,10 +1,10 @@
 require 'securerandom'
-require "rubycas-server-core/adapters/in_memory/storage"
-require "rubycas-server-core/adapters/in_memory/login_ticket"
-require "rubycas-server-core/adapters/in_memory/ticket_granting_ticket"
-require "rubycas-server-core/adapters/in_memory/service_ticket"
-require "rubycas-server-core/adapters/in_memory/proxy_ticket"
-require "rubycas-server-core/adapters/in_memory/proxy_granting_ticket"
+require "rubycas/server/memory/storage"
+require "rubycas/server/memory/login_ticket"
+require "rubycas/server/memory/ticket_granting_ticket"
+require "rubycas/server/memory/service_ticket"
+require "rubycas/server/memory/proxy_ticket"
+require "rubycas/server/memory/proxy_granting_ticket"
 
 module RubyCAS
   module Server
