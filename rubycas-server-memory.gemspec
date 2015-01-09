@@ -2,6 +2,7 @@
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'rubycas/server/memory/version'
+require 'rubycas/server/memory'
 
 Gem::Specification.new do |spec|
   spec.name          = "rubycas-server-memory"

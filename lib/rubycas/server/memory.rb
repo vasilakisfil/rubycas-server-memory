@@ -5,6 +5,7 @@ require "rubycas/server/memory/ticket_granting_ticket"
 require "rubycas/server/memory/service_ticket"
 require "rubycas/server/memory/proxy_ticket"
 require "rubycas/server/memory/proxy_granting_ticket"
+require "rubycas/server/memory/version"
 
 module RubyCAS
   module Server
