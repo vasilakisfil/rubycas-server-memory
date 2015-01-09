@@ -6,7 +6,6 @@ module RubyCAS
           attr_accessor :id, :ticket, :consumed, :client_hostname,
                       :created_at, :updated_at
 
-
           def initialize(lt = {})
             @id = SecureRandom.uuid
             @ticket = lt[:ticket]
@@ -29,7 +28,7 @@ module RubyCAS
           end
 
           def consume!
-            consumed = true
+            self.consumed = true
             self.save
           end
 

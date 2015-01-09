@@ -13,12 +13,13 @@ Gem::Specification.new do |spec|
   spec.homepage      = "https://github.com/vasilakisfil/rubycas-server-memory"
   spec.license       = "MIT"
 
-  spec.files         = `git ls-files`.split($/)
+  spec.files         = `git ls-files -z`.split("\x0")
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
-  spec.require_paths = ["lib"]
+  spec.require_paths = ["lib/rubycas/server/"]
 
   spec.add_development_dependency "bundler"
+  spec.add_development_dependency "pry"
   spec.add_development_dependency "rake"
   spec.add_development_dependency "rspec", "~> 3.1.0"
   spec.add_development_dependency "rspec-its", "~> 1.1.0"
