@@ -1,23 +1,25 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'rubycas/server/memory/version'
+require 'rubycas/server/activerecord/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "rubycas-server-memory"
-  spec.version       = Rubycas::Server::Memory::VERSION
+  spec.version       = RubyCAS::Server::Core::VERSION
   spec.authors       = ["Filippos Vasilakis"]
   spec.email         = ["vasilakisfil@gmail.com"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
-  spec.homepage      = ""
+  spec.description   = %q{Memory adapter for RubyCAS Server}
+  spec.summary       = spec.description
+  spec.homepage      = "https://github.com/vasilakisfil/rubycas-server-memory"
   spec.license       = "MIT"
 
-  spec.files         = `git ls-files -z`.split("\x0")
+  spec.files         = `git ls-files`.split($/)
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]
 
-  spec.add_development_dependency "bundler", "~> 1.6"
+  spec.add_development_dependency "bundler"
   spec.add_development_dependency "rake"
+  spec.add_development_dependency "rspec", "~> 3.1.0"
+  spec.add_development_dependency "rspec-its", "~> 1.1.0"
 end
