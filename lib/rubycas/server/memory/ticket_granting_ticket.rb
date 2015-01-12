@@ -17,7 +17,7 @@ module RubyCAS
             @extra_attributes = tgt[:extra_attributes]
             @service_tickets = tgt[:service_tickets]
             @proxy_tickets = tgt[:proxy_tickets]
-            @remember_me = tgt[:remember_me]
+            @remember_me = tgt[:remember_me] || false
             @created_at = DateTime.now
             @updated_at = DateTime.now
             super()

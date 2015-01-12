@@ -1,4 +1,5 @@
 # Rubycas::Server::Memory
+[![Circle CI](https://circleci.com/gh/vasilakisfil/rubycas-server-memory.svg?style=svg)](https://circleci.com/gh/vasilakisfil/rubycas-server-memory)
 
 ActiveRecord adapter for [RubyCAS Server Core](https://github.com/vasilakisfil/rubycas-server-core). Used mainly in testing (or if you want to have a super fast "db" layer :blush:)
 
