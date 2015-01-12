@@ -2,7 +2,8 @@ module RubyCAS
   module Server
     module Core
       module Tickets
-        class ProxyTicket < Storage
+        class ProxyTicket
+          extend Storage
 
           attr_accessor :id, :ticket, :service, :consumed, :client_hostname,
                         :username, :created_at, :updated_at, :proxy_granting_ticket,
@@ -22,20 +23,12 @@ module RubyCAS
             super()
           end
 
-
-          def self.find_by_ticket(ticket)
-            @storage.each do |id,pt|
-              return pt if pt.ticket == ticket
-            end
-            return nil
-          end
-
           def consumed?
             consumed
           end
 
           def consume!
-            consumed = true
+            self.consumed = true
             self.save
           end
 

@@ -2,7 +2,9 @@ module RubyCAS
   module Server
     module Core
       module Tickets
-        class LoginTicket < Storage
+        class LoginTicket
+          extend Storage
+
           attr_accessor :id, :ticket, :consumed, :client_hostname,
                       :created_at, :updated_at
 
@@ -13,14 +15,6 @@ module RubyCAS
             @client_hostname = lt[:client_hostname]
             @created_at = DateTime.now
             @updated_at = DateTime.now
-            super()
-          end
-
-          def self.find_by_ticket(ticket)
-            @storage.each do |id,lt|
-              return lt if lt.ticket == ticket
-            end
-            return nil
           end
 
           def consumed?

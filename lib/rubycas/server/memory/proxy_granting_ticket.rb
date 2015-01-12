@@ -2,7 +2,8 @@ module RubyCAS
   module Server
     module Core
       module Tickets
-        class ProxyGrantingTicket < Storage
+        class ProxyGrantingTicket
+          extend Storage
 
           attr_accessor :id, :ticket, :client_hostname, :iou,
                         :created_at, :updated_at, :service_ticket,
@@ -17,14 +18,6 @@ module RubyCAS
             @service_ticket = pgt[:service_ticket]
             @proxy_tickets = pgt[:proxy_tickets]
             super()
-          end
-
-
-          def self.find_by_ticket(ticket)
-            @storage.each do |id,pgt|
-              return pgt if pgt.ticket == ticket
-            end
-            return nil
           end
 
           def expired?(max_lifetime = 100)

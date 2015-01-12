@@ -2,7 +2,9 @@ module RubyCAS
   module Server
     module Core
       module Tickets
-        class TicketGrantingTicket < Storage
+        class TicketGrantingTicket
+          extend Storage
+
           attr_accessor :id, :ticket, :client_hostname, :username,
                         :extra_attributes, :service_tickets, :proxy_tickets,
                         :remember_me, :created_at, :updated_at
@@ -19,13 +21,6 @@ module RubyCAS
             @created_at = DateTime.now
             @updated_at = DateTime.now
             super()
-          end
-
-          def self.find_by_ticket(ticket)
-            @storage.each do |id, tgt|
-              return tgt if tgt.ticket == ticket
-            end
-            return nil
           end
 
           def expired?(max_lifetime)
