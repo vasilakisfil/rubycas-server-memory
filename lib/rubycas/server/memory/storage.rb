@@ -15,7 +15,7 @@ module RubyCAS
 
           def self.extended(base)
             base.instance_variable_set(:@storage, {})
-            base.include(InstanceMethods)
+            base.send(:include, InstanceMethods)
           end
 
           module InstanceMethods
